@@ -1,0 +1,125 @@
+int led1=9;
+int led2=10;
+int led3=3;
+int led4=0;
+int switch1=4;
+int delaytime1=50;
+int currentCode = 0;
+int buttonState = 0;
+void setup() {
+  // put your setup code here, to run once:
+
+
+pinMode(switch1, INPUT);
+pinMode(led1,OUTPUT);
+pinMode(led2,OUTPUT);
+pinMode(led3,OUTPUT);
+pinMode(led4,OUTPUT);
+}
+
+
+
+
+void loop() {
+  // put your main code here, to run repeatedly:
+buttonState = digitalRead(switch1);
+
+ if (buttonState == HIGH) {
+    currentCode++;
+    if (currentCode > 2) {
+      currentCode = 0;
+    }
+  }
+ if (currentCode == 0) {
+    // Code 0: turn LED off
+    digitalWrite(led1, HIGH);   
+ delay(delaytime1);
+ digitalWrite(led1, LOW);  
+ delay(delaytime1);
+ digitalWrite(led2, HIGH);    
+ delay(delaytime1);
+ digitalWrite(led3, HIGH);  
+ delay(delaytime1);
+ digitalWrite(led3, HIGH);   
+ delay(delaytime1);
+ digitalWrite(led3, LOW);  
+ delay(delaytime1);
+ digitalWrite(led4, HIGH);   
+ delay(delaytime1);
+ digitalWrite(led4, LOW);   
+ delay(delaytime1);
+  digitalWrite(led3, HIGH);   
+ delay(delaytime1);
+ digitalWrite(led3, LOW);  
+ delay(delaytime1);
+ digitalWrite(led2, HIGH);   
+ delay(delaytime1);
+ digitalWrite(led2, LOW);  
+ delay(delaytime1);
+ digitalWrite(led1, HIGH);   
+ delay(delaytime1);
+ digitalWrite(led1, LOW); 
+ delay(delaytime1);
+  } else if (currentCode == 1) {
+    // Code 1: turn LED on
+    digitalWrite(led1, HIGH);   
+ delay(delaytime1);
+ digitalWrite(led4, HIGH);  
+ delay(delaytime1);
+ digitalWrite(led2, HIGH);    
+ delay(delaytime1);
+ digitalWrite(led3, HIGH);  
+ delay(delaytime1);
+ digitalWrite(led3, HIGH);   
+ delay(delaytime1);
+ digitalWrite(led3, LOW);  
+ delay(delaytime1);
+ digitalWrite(led4, LOW);   
+ delay(delaytime1);
+ digitalWrite(led3, LOW);   
+ delay(delaytime1);
+  digitalWrite(led2, LOW);   
+ delay(delaytime1);
+ digitalWrite(led1, LOW);  
+ delay(delaytime1);
+ digitalWrite(led2, HIGH);   
+ delay(delaytime1);
+ digitalWrite(led1, HIGH);  
+ delay(delaytime1);
+ digitalWrite(led3, HIGH);   
+ delay(delaytime1);
+ digitalWrite(led4, HIGH); 
+ delay(delaytime1);
+  }
+  else if (currentCode == 2) {
+       digitalWrite(led1, HIGH);   
+ delay(delaytime1);
+ digitalWrite(led4, HIGH);  
+ delay(delaytime1);
+ digitalWrite(led2, LOW);    
+ delay(delaytime1);
+ digitalWrite(led3, HIGH);  
+ delay(delaytime1);
+ digitalWrite(led1, LOW);   
+ delay(delaytime1);
+ digitalWrite(led3, LOW);  
+ delay(delaytime1);
+ digitalWrite(led4, LOW);   
+ delay(delaytime1);
+ digitalWrite(led2, HIGH);   
+ delay(delaytime1);
+  digitalWrite(led1, HIGH);   
+ delay(delaytime1);
+ digitalWrite(led1, LOW);  
+ delay(delaytime1);
+ digitalWrite(led2, HIGH);   
+ delay(delaytime1);
+ digitalWrite(led1, HIGH);  
+ delay(delaytime1);
+ digitalWrite(led3, LOW);   
+ delay(delaytime1);
+ digitalWrite(led4, LOW); 
+ delay(delaytime1);
+
+ }
+}
