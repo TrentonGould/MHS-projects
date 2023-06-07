@@ -1,0 +1,21 @@
+def find_sum_pair(numbers, target_sum):
+    seen = set()
+
+    for num in numbers:
+        complement = target_sum - num
+        if complement in seen:
+            return num, complement
+        seen.add(num)
+    
+    return None
+
+# Example usage
+numbers = [2, 4, 7, 11, 15]
+target_sum = 18
+
+result = find_sum_pair(numbers, target_sum)
+if result:
+    num1, num2 = result
+    print(f"The pair of numbers that add up to {target_sum} is: {num1} and {num2}")
+else:
+    print("No pair of numbers found.")
