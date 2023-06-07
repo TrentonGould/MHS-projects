@@ -1,0 +1,30 @@
+var time = 10;
+var clickCount = 0;
+function retry() {
+  time = 10;
+  clickCount = 0;
+  setText("seconds", time);
+}
+retry();
+onEvent("button1", "click", function( ) {
+  setPosition("button1", randomNumber(1, 285), randomNumber(1, 330), 100, 40);
+});
+onEvent("button1", "click", function( ) {
+  clickCount = clickCount + 1;
+  if (clickCount == 1) {
+    timedLoop(1000, function() {
+      time = time - 1;
+      setText("seconds", time);
+      if (time == 0) {
+        stopTimedLoop();
+        setScreen("screen2");
+        setText("clickNumber", clickCount);
+      }
+    });
+  }
+});
+onEvent("button2", "click", function( ) {
+  setScreen("screen1");
+  retry();
+  setPosition("button1", 115, 215, 100, 40);
+});
